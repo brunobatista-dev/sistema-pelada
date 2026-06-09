@@ -189,7 +189,7 @@ public class App {
                     System.out.println("----------------------------------------");
                     System.out.println("\n*Valor da divisão por pessoa:* R$ " + financeiro.getValorPorJogador());
                     
-                    // TEXTO DO WHATSAPP ENXUTO APENAS COM CHAVE E TITULAR
+        
                     System.out.println("\n*DADOS PARA O PIX:*");
                     System.out.println("Pix: " + financeiro.getChavePix());
                     System.out.println("Titular: " + financeiro.getNomePix());
