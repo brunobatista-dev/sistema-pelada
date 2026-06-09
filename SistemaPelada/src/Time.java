@@ -77,9 +77,7 @@ public class Time {
         return null;
     }
 
-    // REGRA DE NEGÓCIO: Remove quem não pagou e sobe o próximo da fila
     public String removerPorFaltaDePagamento(String nome) {
-        // Caso 1: Estava no Time A
         for (Jogador j : listaTimeA) {
             if (j.getNome().equalsIgnoreCase(nome)) {
                 listaTimeA.remove(j);
@@ -87,7 +85,6 @@ public class Time {
                 return "REMOVIDO_TIME_A";
             }
         }
-        // Caso 2: Estava no Time B
         for (Jogador j : listaTimeB) {
             if (j.getNome().equalsIgnoreCase(nome)) {
                 listaTimeB.remove(j);
@@ -95,7 +92,6 @@ public class Time {
                 return "REMOVIDO_TIME_B";
             }
         }
-        // Caso 3: Estava na fila de espera (apenas remove, não precisa subir ninguém)
         for (Jogador j : listaEspera) {
             if (j.getNome().equalsIgnoreCase(nome)) {
                 listaEspera.remove(j);
@@ -105,10 +101,9 @@ public class Time {
         return "NAO_ENCONTRADO";
     }
 
-    // Remove o primeiro da fila de espera e coloca no time que ficou com vaga
     private void puxarProximoDaEspera(String timeComVaga) {
         if (!listaEspera.isEmpty()) {
-            Jogador proximo = listaEspera.remove(0); // Remove o primeiro da lista (índice 0)
+            Jogador proximo = listaEspera.remove(0); // Remove e captura o primeiro elemento (índice 0)
             if (timeComVaga.equals("A")) {
                 listaTimeA.add(proximo);
                 System.out.println("-> [FILA DE ESPERA] " + proximo.getNome() + " subiu para o TIME A!");

@@ -4,7 +4,7 @@ public class Jogador {
 
     public Jogador(String nome) {
         this.nome = nome;
-        this.pago = false; // Todo jogador começa devendo até que se confirme o Pix
+        this.pago = false;
     }
 
     public String getNome() {
