@@ -103,7 +103,7 @@ public class Time {
 
     private void puxarProximoDaEspera(String timeComVaga) {
         if (!listaEspera.isEmpty()) {
-            Jogador proximo = listaEspera.remove(0); // Remove e captura o primeiro elemento (índice 0)
+            Jogador proximo = listaEspera.remove(0); 
             if (timeComVaga.equals("A")) {
                 listaTimeA.add(proximo);
                 System.out.println("-> [FILA DE ESPERA] " + proximo.getNome() + " subiu para o TIME A!");
